@@ -31,12 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtusuario = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmaill = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSenhaa = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.txtSenhaConfirm = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -70,15 +68,17 @@
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(216, 18);
             this.txtusuario.TabIndex = 2;
+            this.txtusuario.TextChanged += new System.EventHandler(this.txtusuario_TextChanged);
             // 
-            // textBox1
+            // txtEmaill
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(39, 205);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 18);
-            this.textBox1.TabIndex = 4;
+            this.txtEmaill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.txtEmaill.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmaill.Location = new System.Drawing.Point(39, 205);
+            this.txtEmaill.Name = "txtEmaill";
+            this.txtEmaill.Size = new System.Drawing.Size(216, 18);
+            this.txtEmaill.TabIndex = 4;
+            this.txtEmaill.TextChanged += new System.EventHandler(this.txtEmaill_TextChanged);
             // 
             // txtEmail
             // 
@@ -89,14 +89,15 @@
             this.txtEmail.TabIndex = 3;
             this.txtEmail.Text = "E-Mail:";
             // 
-            // textBox2
+            // txtSenhaa
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(39, 281);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 18);
-            this.textBox2.TabIndex = 6;
+            this.txtSenhaa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.txtSenhaa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSenhaa.Location = new System.Drawing.Point(39, 281);
+            this.txtSenhaa.Name = "txtSenhaa";
+            this.txtSenhaa.Size = new System.Drawing.Size(216, 18);
+            this.txtSenhaa.TabIndex = 6;
+            this.txtSenhaa.TextChanged += new System.EventHandler(this.txtSenhaa_TextChanged);
             // 
             // txtSenha
             // 
@@ -107,31 +108,13 @@
             this.txtSenha.TabIndex = 5;
             this.txtSenha.Text = "Senha:";
             // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(39, 349);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(216, 18);
-            this.textBox3.TabIndex = 8;
-            // 
-            // txtSenhaConfirm
-            // 
-            this.txtSenhaConfirm.AutoSize = true;
-            this.txtSenhaConfirm.Location = new System.Drawing.Point(38, 314);
-            this.txtSenhaConfirm.Name = "txtSenhaConfirm";
-            this.txtSenhaConfirm.Size = new System.Drawing.Size(134, 17);
-            this.txtSenhaConfirm.TabIndex = 7;
-            this.txtSenhaConfirm.Text = "Confirme sua senha:";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Window;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button1.Location = new System.Drawing.Point(41, 396);
+            this.button1.Location = new System.Drawing.Point(41, 348);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 41);
             this.button1.TabIndex = 9;
@@ -142,7 +125,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(71, 487);
+            this.label3.Location = new System.Drawing.Point(75, 429);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 17);
             this.label3.TabIndex = 10;
@@ -154,7 +137,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button2.Location = new System.Drawing.Point(74, 507);
+            this.button2.Location = new System.Drawing.Point(78, 449);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(137, 25);
             this.button2.TabIndex = 11;
@@ -170,11 +153,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.txtSenhaConfirm);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSenhaa);
             this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmaill);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.label2);
@@ -196,12 +177,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtusuario;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmaill;
         private System.Windows.Forms.Label txtEmail;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSenhaa;
         private System.Windows.Forms.Label txtSenha;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label txtSenhaConfirm;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
