@@ -9,7 +9,7 @@ namespace LoginScreen
     public partial class FormRegistrador : Form
     {
         //Conexão com o banco de dados
-        MySqlConnection conexao = new MySqlConnection("Server=localhost;Database=;Uid=;Pwd=");
+        MySqlConnection conexao = new MySqlConnection("server=localhost;database=;uid=;pwd=;");
         Thread t;
         public FormRegistrador()
         {
@@ -30,7 +30,10 @@ namespace LoginScreen
                     conexao.Open();
                     MySqlDataReader resultado = tabela.ExecuteReader();
                     conexao.Close();
-                    MySqlCommand inserir = new MySqlCommand("INSERT INTO registro (username, password, email) VALUES (" + "'" + txtusuario.Text + "', " + "'" + txtSenhaa.Text + "', " + "'" + txtEmaill.Text + "');", conexao);
+                    MySqlCommand inserir = new MySqlCommand("INSERT INTO registro (username, password, email) VALUES (@username, @password, @email);", conexao);
+                    inserir.Parameters.AddWithValue("@username", txtusuario.Text);
+                    inserir.Parameters.AddWithValue("@password", txtSenhaa.Text);
+                    inserir.Parameters.AddWithValue("@email", txtEmaill.Text);
                     conexao.Open();
                     MySqlDataReader resultado1 = inserir.ExecuteReader();
                     conexao.Close();
