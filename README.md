@@ -53,8 +53,7 @@
 ### Linha 33: em "frmRegistro.cs", Substitua o nome da tabela "registro" para a anterior, caso você tenha substituído, esse trecho do código está inserindo os dados passados pelo usuário nas respectivas colunas.
 
 ```C#
-           MySqlCommand inserir = new MySqlCommand("INSERT INTO registro (username, password, email) VALUES (" + "'" + txtusuario.Text + "', " + "'" + txtSenhaa.Text + "', " + "'" + txtEmaill.Text + "');", conexao);
-
+           MySqlCommand inserir = new MySqlCommand("INSERT INTO registro (username, password, email) VALUES (@username, @password, @email);", conexao);
 ```
 <br>
 
