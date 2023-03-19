@@ -19,39 +19,38 @@
 
 <h1 align="center"> Instruções de uso para o Desenvolvedor:</h2>
 
-## Linha 10: em "frmLogin.cs", Altere para o seu servidor, o nome do seu banco de dados, e o usuario e senha para login no banco.
+### Linha 10: em "frmLogin.cs", Altere para o seu servidor, o nome do seu banco de dados, e o usuario e senha para login no banco.
 
 ```C#
         string conexaoString = "server=localhost;database=;uid=;pwd=;";
 ```
 
-## Linha 46: em "frmLogin.cs", Altere para o seu servidor, o nome do seu banco de dados, e o usuario e senha para login no banco.
+### Linha 46: em "frmLogin.cs", Altere para o seu servidor, o nome do seu banco de dados, e o usuario e senha para login no banco.
 
 ```C#
         string conexaoString = "server=localhost;database=;uid=;pwd=;";
 ```
 
-## Linha 51: em "frmLogin.cs" Altere para selecionar a Tabela, e em seguida as colunas, no caso da linha abaixo, registro é a tabela, username e password são as colunas.
+### Linha 51: em "frmLogin.cs" Altere para selecionar a Tabela, e em seguida as colunas, no caso da linha abaixo, registro é a tabela, username e password são as colunas.
 
 ```C#
          String seleciona = ("SELECT COUNT(*) FROM registro WHERE username=@user AND password=@senha");
 ```
 <br>
-<br>
 
-## Linha 12: em "frmRegistro.cs", Altere para o seu servidor, o nome do seu banco de dados, e o usuario e senha para login no banco.
+### Linha 12: em "frmRegistro.cs", Altere para o seu servidor, o nome do seu banco de dados, e o usuario e senha para login no banco.
 
 ```C#
          MySqlConnection conexao = new MySqlConnection("Server=localhost;Database=;Uid=;Pwd=");
 ```
 
-## Linha 29: em "frmRegistro.cs", Criará uma Table caso ainda não exista, substitua "registro" para o nome que você queira dar á sua tabela.
+### Linha 29: em "frmRegistro.cs", Criará uma Table caso ainda não exista, substitua "registro" para o nome que você queira dar á sua tabela.
 
 ```C#
           MySqlCommand tabela = new MySqlCommand("CREATE TABLE IF NOT EXISTS registro(userid INT AUTO_INCREMENT PRIMARY KEY, username varchar(40) UNIQUE, password varchar(440), email varchar(704) UNIQUE);", conexao);
 ```
 
-## Linha 33: em "frmRegistro.cs", Substitua o nome da tabela "registro" para a anterior, caso você tenha substituído, esse trecho do código está inserindo os dados passados pelo usuário nas respectivas colunas.
+### Linha 33: em "frmRegistro.cs", Substitua o nome da tabela "registro" para a anterior, caso você tenha substituído, esse trecho do código está inserindo os dados passados pelo usuário nas respectivas colunas.
 
 ```C#
            MySqlCommand inserir = new MySqlCommand("INSERT INTO registro (username, password, email) VALUES (" + "'" + txtusuario.Text + "', " + "'" + txtSenhaa.Text + "', " + "'" + txtEmaill.Text + "');", conexao);
