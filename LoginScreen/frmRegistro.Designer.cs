@@ -141,7 +141,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button2.Location = new System.Drawing.Point(78, 432);
+            this.button2.Location = new System.Drawing.Point(78, 439);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(137, 25);
             this.button2.TabIndex = 11;

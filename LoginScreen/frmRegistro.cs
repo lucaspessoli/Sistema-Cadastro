@@ -9,7 +9,7 @@ namespace LoginScreen
     public partial class FormRegistrador : Form
     {
         //Conexão com o banco de dados
-        MySqlConnection conexao = new MySqlConnection("Server=localhost;Database=;Uid=;Pwd=;");
+        MySqlConnection conexao = new MySqlConnection("Server=localhost;Database=;Uid=;Pwd=");
         Thread t;
         public FormRegistrador()
         {
@@ -18,21 +18,32 @@ namespace LoginScreen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtusuario.Text == "" || txtusuario.Text == " " || txtSenhaa.Text == "" || txtSenhaa.Text == " " || txtEmaill.Text == "" || txtEmaill.Text == " ")
+            try
             {
-                MessageBox.Show("Erro! Insira credenciais corretas!");
+                if (txtusuario.Text == "" || txtusuario.Text == " " || txtSenhaa.Text == "" || txtSenhaa.Text == " " || txtEmaill.Text == "" || txtEmaill.Text == " ")
+                {
+                    MessageBox.Show("Erro! Insira credenciais corretas!");
+                }
+                else
+                {
+                    MySqlCommand tabela = new MySqlCommand("CREATE TABLE IF NOT EXISTS registro(userid INT AUTO_INCREMENT PRIMARY KEY, username varchar(40) UNIQUE, password varchar(440), email varchar(704) UNIQUE);", conexao);
+                    conexao.Open();
+                    MySqlDataReader resultado = tabela.ExecuteReader();
+                    conexao.Close();
+                    MySqlCommand inserir = new MySqlCommand("INSERT INTO registro (username, password, email) VALUES (" + "'" + txtusuario.Text + "', " + "'" + txtSenhaa.Text + "', " + "'" + txtEmaill.Text + "');", conexao);
+                    conexao.Open();
+                    MySqlDataReader resultado1 = inserir.ExecuteReader();
+                    conexao.Close();
+                    MessageBox.Show("Conta criada com sucesso! Obrigado.", "Parabéns!");
+                    frmLogin Login = new frmLogin();
+                    Login.Show();
+                    this.Close();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MySqlCommand tabela = new MySqlCommand("CREATE TABLE IF NOT EXISTS registro(userid INT AUTO_INCREMENT PRIMARY KEY, username varchar(40) UNIQUE, password varchar(440), email varchar(704) UNIQUE);", conexao);
-                conexao.Open();
-                MySqlDataReader resultado = tabela.ExecuteReader();
-                conexao.Close();
-                Console.WriteLine("INSERT INTO registro (username, password, email) VALUES (" + "'" + 4 + "', " + "'" + 3 + "', " + "'" + 2 + "')");
-                MySqlCommand inserir = new MySqlCommand("INSERT INTO registro (username, password, email) VALUES ("+"'"+txtusuario.Text+"', "+ "'"+txtSenhaa.Text+"', "+"'"+txtEmaill.Text +"');", conexao);
-                conexao.Open();
-                MySqlDataReader resultado1 = inserir.ExecuteReader();
-                conexao.Close();            
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Este usuário ou e-mail já estão cadastrados!", "Erro");   
             }
             }
 

@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSenhaLogin = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.Label();
-            this.txtusuario = new System.Windows.Forms.TextBox();
+            this.txtUsuarioLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -43,23 +42,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Window;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button2.Location = new System.Drawing.Point(71, 382);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 25);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Registre-se!";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 342);
+            this.label3.Location = new System.Drawing.Point(75, 412);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 17);
             this.label3.TabIndex = 22;
@@ -71,22 +57,23 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button1.Location = new System.Drawing.Point(38, 261);
+            this.button1.Location = new System.Drawing.Point(38, 255);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(214, 41);
             this.button1.TabIndex = 21;
             this.button1.Text = "LOGAR";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox2
+            // txtSenhaLogin
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(36, 197);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 18);
-            this.textBox2.TabIndex = 18;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtSenhaLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.txtSenhaLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSenhaLogin.Location = new System.Drawing.Point(36, 197);
+            this.txtSenhaLogin.Name = "txtSenhaLogin";
+            this.txtSenhaLogin.Size = new System.Drawing.Size(216, 18);
+            this.txtSenhaLogin.TabIndex = 18;
+            this.txtSenhaLogin.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtSenha
             // 
@@ -98,14 +85,14 @@
             this.txtSenha.Text = "Senha:";
             this.txtSenha.Click += new System.EventHandler(this.txtSenha_Click);
             // 
-            // txtusuario
+            // txtUsuarioLogin
             // 
-            this.txtusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.txtusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtusuario.Location = new System.Drawing.Point(36, 124);
-            this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(216, 18);
-            this.txtusuario.TabIndex = 14;
+            this.txtUsuarioLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.txtUsuarioLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuarioLogin.Location = new System.Drawing.Point(36, 124);
+            this.txtUsuarioLogin.Name = "txtUsuarioLogin";
+            this.txtUsuarioLogin.Size = new System.Drawing.Size(216, 18);
+            this.txtUsuarioLogin.TabIndex = 14;
             // 
             // label2
             // 
@@ -133,9 +120,9 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button3.Location = new System.Drawing.Point(71, 382);
+            this.button3.Location = new System.Drawing.Point(82, 442);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(149, 25);
+            this.button3.Size = new System.Drawing.Size(137, 25);
             this.button3.TabIndex = 23;
             this.button3.Text = "CRIAR UMA CONTA";
             this.button3.UseVisualStyleBackColor = false;
@@ -147,9 +134,9 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button4.Location = new System.Drawing.Point(71, 423);
+            this.button4.Location = new System.Drawing.Point(82, 477);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(149, 25);
+            this.button4.Size = new System.Drawing.Size(137, 25);
             this.button4.TabIndex = 24;
             this.button4.Text = "FECHAR";
             this.button4.UseVisualStyleBackColor = false;
@@ -190,12 +177,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSenhaLogin);
             this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtusuario);
+            this.Controls.Add(this.txtUsuarioLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,13 +197,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSenhaLogin;
         private System.Windows.Forms.Label txtSenha;
-        private System.Windows.Forms.TextBox txtusuario;
+        private System.Windows.Forms.TextBox txtUsuarioLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
