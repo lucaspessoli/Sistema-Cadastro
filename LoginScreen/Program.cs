@@ -16,7 +16,10 @@ namespace LoginScreen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormRegistrador());
+            frmLogin f1 = new frmLogin();
+            FormRegistrador f2 = new FormRegistrador();
+            f1.Show();
+            Application.Run();
         }
     }
 }

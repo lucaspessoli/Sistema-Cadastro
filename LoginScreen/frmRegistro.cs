@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Threading;
 
 namespace LoginScreen
 {
@@ -15,6 +16,7 @@ namespace LoginScreen
     {
         //Conexão com o banco de dados
         MySqlConnection conexao = new MySqlConnection("Server=localhost;Database=;Uid=;Pwd=;");
+        Thread t;
         public FormRegistrador()
         {
             InitializeComponent();
@@ -36,7 +38,7 @@ namespace LoginScreen
                 MySqlCommand inserir = new MySqlCommand("INSERT INTO registro (username, password, email) VALUES ("+"'"+txtusuario.Text+"', "+ "'"+txtSenhaa.Text+"', "+"'"+txtEmaill.Text +"');", conexao);
                 conexao.Open();
                 MySqlDataReader resultado1 = inserir.ExecuteReader();
-                conexao.Close();
+                conexao.Close();            
             }
             }
 
@@ -53,6 +55,18 @@ namespace LoginScreen
         private void txtSenhaa_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmLogin telaLogin = new frmLogin();
+            telaLogin.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
     }

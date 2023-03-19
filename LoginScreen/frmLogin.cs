@@ -26,5 +26,18 @@ namespace LoginScreen
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormRegistrador telaRegistro = new FormRegistrador();
+
+            telaRegistro.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
